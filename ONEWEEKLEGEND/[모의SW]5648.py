@@ -73,7 +73,7 @@ for tc in range(T):
             x, y, d, k = molecule[i]
             nx = x + DX[d]
             ny = y + DY[d]
-            # 배열에서 벗어나면 제외 -> 근데 조건에서는 좌표에 제한이 없다고 했는데?
+            # 배열에서 벗어나면 제외 -> 근데 조건에서는 좌표에 제한이 없다고 했는데? -> 그치만 중요한건 이 영역에서 벗어날때까지 충돌한 적이 없으면 결국에는 영원히 못 만난다는 뜻이다.
             if not check_range(nx, ny):
                 pop_list.append(i)
                 continue
