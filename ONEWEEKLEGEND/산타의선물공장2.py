@@ -37,7 +37,11 @@
 [출력]: a + (2*b) + (3*c)
 
 <풀이중 깨닳은 점>
+<<<<<<< HEAD
 - 생각해 보니 전혀 필요 없던 belt_id 정보를 저장하는 배열떄문에 while 문이 들어가서 시간 초과가 났었다.
+=======
+- 생각해 보니 전혀 필요 없던 belt_id 정보를 저장하는 배열떄문에 while 문이 들어가서 시간초과가 났었다.
+>>>>>>> origin/master
 - 결론적으로 CASE 400 번만 변경을 하니까 문제가 해결이 되었다.
     => 이제 CASE 400을 구현함에 있어서 문제가 뭐였는지 파악하기 위해서 디버깅을 해 보자.
 """
@@ -235,7 +239,11 @@ def divide_product_debug(m_src, m_dst):
     move_ids = []
     for i in range(move_n):
         # belt_id[p_num] = m_dst # 이동하는 물건의 벨트 번로 업데이트
+<<<<<<< HEAD
         hid = head[m_src] # source 벨트의 처음에 있는 물건의 ID
+=======
+        hid = head[m_src]
+>>>>>>> origin/master
         next_head = nxt[hid]
         nxt[hid] = prv[next_head] = 0
         head[m_src] = next_head
