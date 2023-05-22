@@ -6,6 +6,7 @@ DX, DY = [-1, 1, 0, 0], [0, 0, -1, 1]
 N, M = map(int, input().split(' '))
 board = []
 ice = []
+## 입력 받기
 for n in range(N):
     arr = list(map(int, input().split(' ')))
     board.append(arr)
