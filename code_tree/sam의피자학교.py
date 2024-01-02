@@ -54,7 +54,7 @@ def roll(): ## STEP 2 ##
         idx += 1
 
 def in_range(x, y):
-    return (0 <= x <= N and 0 <= y <= N)
+    return (1 <= x <= N and 1 <= y <= N)
 
 def push(): ## STEP 3 ##
     global board

@@ -1,3 +1,6 @@
+import sys
+sys.stdin = open('C:/Users/user/git_repos/samsung_code/input.txt', 'r')
+readl = sys.stdin.readline
 N, M, K = map(int, input().strip().split(' '))
 maze = [list(map(int, input().strip().split(' '))) for _ in range(N)]
 for y in range(N):
@@ -119,7 +122,7 @@ def Rotate():
             if maze[i][j] >= 1:  # 참가자가 있다면, 출구까지 거리 계산
                 dist = max(abs(i-nowExit[0]), abs(j-nowExit[1])) # 가로, 세로 중 큰 값이 가장 작은 정사각형이 된다.
                 minDist = min(minDist, dist)    # 최소 정사각형을 찾는다. => 좌표의 차이기 때문에 칸 개념으로 하려면 +1 해줘야함.
-    
+    # print(f"MIN DIST : {minDist}")
     # 2. 작은 정사각형 크기 중, 좌상단의 숫자가 작은 것이 정사각형의 위치
     bestRow, bestCol = -1, -1 # 좌상단.
     for i in range(N-minDist): ## Y축기준으로 볼 때 좌측 상단의 값이 제일 작은 것 부터 for loop
@@ -139,7 +142,7 @@ def Rotate():
                 break
         if bestRow != -1:
             break
-    
+    # print(bestRow, bestCol, minDist)
     # 3. 찾은 최소 정사각형을 회전한다.
     rotate_square(bestRow, bestCol, minDist)
             
@@ -156,11 +159,14 @@ def isFinish():
 ###################### MAIN ###########################
 for _ in range(K):
     move_people()
+    # print("MOVED", maze)
     if isFinish():
         break
     Rotate()
-    
+    # print(maze)
+    # print(find_exit())
 
+    print(moved_cnt)
 nowExit = find_exit()
 print(moved_cnt)
 print(nowExit[0]+1, nowExit[1]+1)         
